@@ -1,0 +1,23 @@
+---
+interface Props {
+  appName: string;
+}
+const { appName } = Astro.props;
+---
+
+<header class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md border-b border-border">
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="font-heading text-xl font-semibold text-primary">
+      EventReady
+    </a>
+
+    <!-- CTA -->
+    <a
+      href="#waitlist"
+      class="px-5 py-2 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-accent/90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-cta"
+    >
+      Join Waitlist
+    </a>
+  </nav>
+</header>

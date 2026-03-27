@@ -1,0 +1,56 @@
+---
+const pairs = [
+  {
+    pain: "The days leading up to a social event are terrible. I'm already dreading it before it even starts. I can't enjoy anything else—movies, dinners, weekends—because that pit in my stomach won't go away.",
+    solution: "EventReady is your pre-event anxiety interrupter. In 5 minutes before the event, you get personalized conversation openers and one practice round. You walk in knowing exactly what to say—and that changes everything."
+  },
+  {
+    pain: "My mind literally goes blank when someone asks me a question. I'll be standing there like an idiot while my brain is screaming at me to say something. I've practiced what I'm going to say 50 times, and then when the moment comes—none of it comes out.",
+    solution: "EventReady gives you conversation starters tailored to YOUR event, YOUR industry, and WHO you'll meet. Plus, one AI roleplay round where you practice initiating—without the panic."
+  },
+  {
+    pain: "The next day rebound anxiety is overwhelming. I lie awake replaying every interaction, cringing at things I said, wondering if they thought I was weird. Even stuff I did years ago.",
+    solution: "When you walk in prepared, you walk out proud. EventReady isn't therapy—it's a tactical tool for the moments that matter. No daily commitment. No 'practice' grind. Just show up ready."
+  }
+];
+---
+
+<section id="problem-solution" class="py-16 sm:py-24 px-4 bg-surface-elevated">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="font-heading text-title font-bold text-primary text-center mb-12 sm:mb-16" data-reveal>
+      You shouldn't have to white-knuckle it through networking events
+    </h2>
+
+    <div class="space-y-12 sm:space-y-16">
+      {pairs.map((pair, i) => (
+        <div
+          class="grid gap-8 sm:grid-cols-2 sm:gap-12 items-start"
+          data-reveal
+          data-reveal-delay={String(Math.min(i + 1, 5))}
+        >
+          <!-- Pain -->
+          <div class={`relative ${i % 2 === 1 ? 'sm:order-2' : ''}`}>
+            <div class="absolute -left-3 top-0 bottom-0 w-1 rounded-full bg-accent/30" aria-hidden="true"></div>
+            <div class="pl-6">
+              <p class="font-heading text-xl sm:text-2xl italic text-text-muted leading-relaxed">
+                "{pair.pain}"
+              </p>
+            </div>
+          </div>
+
+          <!-- Solution -->
+          <div class={`flex gap-3 ${i % 2 === 1 ? 'sm:order-1' : ''}`}>
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+            </div>
+            <p class="text-text-main leading-relaxed text-base sm:text-lg">
+              {pair.solution}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

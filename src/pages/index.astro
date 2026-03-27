@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ValueProposition from '../components/ValueProposition.astro';
+import ProblemSolution from '../components/ProblemSolution.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import Footer from '../components/Footer.astro';
+
+const APP_NAME = "eventready";
+
+const faqs = [
+  {
+    q: "Isn't this just another social skills app?",
+    a: "No. Every other app asks you to practice daily, build habits, work on yourself over time. EventReady is for the event you have TOMORROW. 5 minutes. One purpose. Show up ready."
+  },
+  {
+    q: "I'm not 'socially anxious'—I just freeze up at professional events.",
+    a: "That's literally what we mean. You don't need to be diagnosed to dread walking into a room full of strangers. EventReady is for professionals who can do the job but freeze in the hallway at conferences."
+  },
+  {
+    q: "How is this different from Hatchr or Gleem?",
+    a: "Hatchr, Gleem, and others are 'practice every day' apps with generic social scenarios. EventReady is the only app that asks what event you're walking into TODAY and gives you exactly what to say. No daily commitment. No dating content. Just events."
+  },
+  {
+    q: "I'm worried the AI responses will feel generic.",
+    a: "We know—generic responses are why people hate most mental health apps. EventReady generates openers based on YOUR event type, industry, and who you'll meet. No two event preps look the same."
+  },
+  {
+    q: "What if I have a panic attack at the event anyway?",
+    a: "EventReady isn't therapy or a substitute for professional help. It's a tactical tool for people who function fine but struggle with the specific anticipatory dread before professional events. If you need more support, we encourage you to seek it."
+  },
+  {
+    q: "How much does it cost?",
+    a: "Free tier: 3 event preps per month. Premium: $9.99/month for unlimited event preps. Annual: $79/year (save 35%). No $200/month therapy prices. No daily grind."
+  }
+];
+
+const steps = [
+  {
+    step: "Tell us about your event",
+    outcome: "Pick your event type—conference, client dinner, networking mixer, office happy hour—and who you'll meet. Takes 30 seconds."
+  },
+  {
+    step: "Get personalized conversation openers",
+    outcome: "Our AI generates 5-7 openers tailored to your specific situation. No more generic 'so, what do you do?'—you'll know exactly how to start a real conversation."
+  },
+  {
+    step: "Practice with one AI roleplay round",
+    outcome: "Run one quick practice round where you initiate the conversation. No judgment. No pressure. When you walk in, you've already done it once."
+  }
+];
+
+const testimonials = [
+  {
+    quote: "I've been avoiding company conferences for three years. Two weeks ago I used EventReady before the holiday party. I actually talked to strangers. [I felt]...normal. Like I was allowed to be there.",
+    name: "Marketing Manager",
+    role: "34"
+  },
+  {
+    quote: "The pit in my stomach started on Tuesday. By Thursday I was useless. Friday was the event. I used EventReady in the parking lot before I went in. Changed everything.",
+    name: "Software Engineer",
+    role: "29"
+  },
+  {
+    quote: "My mind always goes blank when someone asks me a follow-up question. I had three real conversations at a conference last month. That's never happened before.",
+    name: "Sales Executive",
+    role: "41"
+  }
+];
+---
+
+<Layout title="EventReady — Walk In Ready" description="5 minutes before your next networking event, EventReady generates personalized conversation openers and runs one AI practice round—so your brain doesn't go blank.">
+  <Header appName={APP_NAME} />
+  <Hero appName={APP_NAME} />
+  <ValueProposition />
+  <ProblemSolution />
+  <HowItWorks steps={steps} sectionTitle="How It Works" bgClass="bg-surface-elevated" />
+  <Testimonials items={testimonials} title="What early users say" bgClass="bg-surface" />
+  <FAQ items={faqs} bgClass="bg-surface-elevated" />
+  <FinalCTA appName={APP_NAME} />
+  <Footer appName={APP_NAME} />
+</Layout>

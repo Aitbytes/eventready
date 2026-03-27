@@ -1,0 +1,29 @@
+---
+import WaitlistForm from './WaitlistForm.astro';
+
+interface Props {
+  appName: string;
+}
+const { appName } = Astro.props;
+---
+
+<section id="waitlist" class="py-16 sm:py-24 px-4 bg-surface">
+  <div class="max-w-2xl mx-auto text-center">
+    <h2 class="font-heading text-title font-bold text-primary mb-6" data-reveal>
+      Your next event doesn't have to ruin your week.
+    </h2>
+    <p class="text-lead text-text-muted mb-10" data-reveal data-reveal-delay="1">
+      The anticipatory anxiety is worse than the event itself. Stop dreading. Start preparing. In 5 minutes, you could walk in ready.
+    </p>
+
+    <div data-reveal data-reveal-delay="2">
+      <WaitlistForm
+        projectName={appName}
+        buttonText="Join the Waitlist — Get Early Access"
+        incentiveText="No spam. No daily reminders. Just your first event prep, ready when you need it."
+        variant="cta"
+        formId="bottom"
+      />
+    </div>
+  </div>
+</section>
